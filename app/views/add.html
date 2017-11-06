@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+
+<h1>Mon Réseau</h1>
+
+<div  class="row">
+    <div class="col-16">
+      <div class="page-header">
+        <div class="form-group">
+          <label>Recherche:</label>
+          <input type="search" class="form-control" ng-model="searchText" placeholder="Username...">
+        </div>
+      </div>
+      <div class="row"  ng-controller="AddController">
+        <article class="col-4 wrapper" ng-repeat="f in friends | filter:searchText">
+          <div class="userImages">
+            <img src="Join-coloc.jpg"  width="100%">
+          </div>
+          <div style="text-align:center">
+            <h4>{{f.name}}</h4>
+
+            <button class="btn btn-sm btn-danger" ng-click='delete(f.id)'><i class="fa fa-user-times" aria-hidden="true"></i></button>
+          </div>
+        </article>
+      </div>
+    </div>
+</div>
